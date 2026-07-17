@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_portfolio_sale_return_form" model="ir.ui.view">
+    <field name="name">portfolio.sale.return.wizard.form</field>
+    <field name="model">portfolio.sale.return.wizard</field>
+    <field name="arch" type="xml">
+      <form string="Sales Return">
+        <group>
+          <field name="sale_order_id"/>
+          <field name="picking_id"/>
+          <field name="create_credit_note"/>
+        </group>
+        <field name="line_ids">
+          <list editable="bottom" create="false" delete="false">
+            <field name="move_id" column_invisible="True"/>
+            <field name="product_id"/>
+            <field name="delivered_qty"/>
+            <field name="quantity"/>
+          </list>
+        </field>
+        <footer>
+          <button name="action_create_return" type="object" string="Create Return" class="btn-primary"/>
+          <button string="Cancel" special="cancel" class="btn-secondary"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+</odoo>
